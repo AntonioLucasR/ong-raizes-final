@@ -58,11 +58,19 @@ $html = [regex]::Replace($html, '<!--.*?-->', '', 'Singleline')
 $linhasHtml = $html -split "`r?`n" | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne '' }
 Gravar 'index.html' ($linhasHtml -join "`n")
 
-# Imagens
-New-Item -ItemType Directory -Force (Join-Path $dist 'imagens') | Out-Null
-Copy-Item (Join-Path $raiz 'imagens/muda-nas-maos.webp') (Join-Path $dist 'imagens/muda-nas-maos.webp')
+# Imagens: reduz para 960 px de largura e comprime em WebP (usa o ffmpeg quando existir)
+$origem = Join-Path $raiz 'imagens/muda-nas-maos.webp'
+$destino = Join-Path $dist 'imagens/muda-nas-maos.webp'
+New-Item -ItemType Directory -Force (Split-Path $destino) | Out-Null
+if (Get-Command ffmpeg -ErrorAction SilentlyContinue) {
+    ffmpeg -y -loglevel error -i $origem -vf "scale=960:-2" -c:v libwebp -quality 75 $destino
+} else {
+    Write-Host 'ffmpeg nao encontrado: imagem copiada sem compressao' -ForegroundColor Yellow
+    Copy-Item $origem $destino
+}
 
 Write-Host ''
 Write-Host 'Build concluido em dist/' -ForegroundColor Green
 Write-Host ('  CSS : {0:N0} -> {1:N0} bytes' -f $cssOriginal.Length, (Tamanho 'css/app.min.css'))
 Write-Host ('  JS  : {0:N0} -> {1:N0} bytes' -f $jsOriginal.Length, (Tamanho 'js/app.min.js'))
+Write-Host ('  IMG : {0:N0} -> {1:N0} bytes' -f (Get-Item $origem).Length, (Tamanho 'imagens/muda-nas-maos.webp'))
