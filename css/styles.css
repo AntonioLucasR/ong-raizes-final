@@ -186,7 +186,7 @@ nav a:hover {
 
 .destaque-texto {
   font-size: var(--fonte-md);
-  color: var(--verde-claro);
+  color: #f1faf4;
   margin-bottom: var(--espaco-6);
 }
 
@@ -508,7 +508,7 @@ nav a:hover {
 .campo textarea {
   width: 100%;
   padding: var(--espaco-3) var(--espaco-4);
-  border: 1px solid #d8d3c6;
+  border: 1px solid #7f7f74;
   border-radius: 8px;
   font-size: var(--fonte-base);
   font-family: inherit;
@@ -520,9 +520,9 @@ nav a:hover {
 .campo input:focus,
 .campo select:focus,
 .campo textarea:focus {
-  outline: none;
-  border-color: var(--verde);
-  box-shadow: 0 0 0 3px rgba(47, 122, 83, 0.2);
+  outline: 3px solid var(--verde-escuro);
+  outline-offset: 1px;
+  border-color: var(--verde-escuro);
   background-color: var(--branco);
 }
 
@@ -1101,4 +1101,43 @@ nav a[aria-current="page"] {
 #resumo-erros .alerta ul {
   margin: var(--espaco-2) 0 0;
   padding-left: var(--espaco-5);
+}
+
+/* Acessibilidade: link para pular ao conteúdo (WCAG 2.4.1) */
+.link-pular {
+  position: absolute;
+  top: -100px;
+  left: var(--espaco-4);
+  z-index: 100;
+  padding: var(--espaco-3) var(--espaco-5);
+  border-radius: 8px;
+  background-color: var(--verde-escuro);
+  color: var(--branco);
+  font-weight: 700;
+}
+
+.link-pular:focus {
+  top: var(--espaco-2);
+  outline: 3px solid var(--branco);
+  outline-offset: 2px;
+}
+
+/* Acessibilidade: contraste mínimo de 4,5:1 nos textos de apoio (WCAG 1.4.3) */
+::placeholder {
+  color: #67675f;
+  opacity: 1;
+}
+
+/* Acessibilidade: foco visível em links, botões e resumos (WCAG 2.4.7) */
+a:focus-visible,
+summary:focus-visible,
+.menu-hamburguer:focus-visible {
+  outline: 3px solid var(--verde-escuro);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.cabecalho nav a:focus-visible {
+  color: var(--verde);
+  border-bottom-color: var(--verde);
 }
