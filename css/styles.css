@@ -520,7 +520,7 @@ nav a:hover {
 .campo input:focus,
 .campo select:focus,
 .campo textarea:focus {
-  outline:  3px solid var(--verde-escuro);
+  outline: 3px solid var(--verde-escuro);
   outline-offset: 1px;
   border-color: var(--verde-escuro);
   background-color: var(--branco);
