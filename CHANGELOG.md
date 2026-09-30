@@ -2,6 +2,11 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 
+## [1.0.1] - 2026-09-30
+
+### Corrigido
+- Rolagem horizontal no bloco "Sobre" em telas de celular (WCAG 1.4.10, Reflow).
+
 ## [1.0.0] - 2026-09-30
 
 ### Adicionado
