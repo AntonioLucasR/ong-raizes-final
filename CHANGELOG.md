@@ -2,6 +2,13 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 
+## [1.1.0] - 2026-09-30
+
+### Adicionado
+- Modo escuro automático, que segue a preferência do sistema (`prefers-color-scheme`).
+- Modo de alto contraste no tema claro e no escuro (`prefers-contrast`).
+- Seção sobre os modos de cor na documentação de acessibilidade.
+
 ## [1.0.1] - 2026-09-30
 
 ### Corrigido
