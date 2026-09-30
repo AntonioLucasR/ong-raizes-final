@@ -186,7 +186,7 @@ nav a:hover {
 
 .destaque-texto {
   font-size: var(--fonte-md);
-  color: var(--verde-claro);
+  color: #f1faf4;
   margin-bottom: var(--espaco-6);
 }
 
@@ -1120,4 +1120,10 @@ nav a[aria-current="page"] {
   top: var(--espaco-2);
   outline: 3px solid var(--branco);
   outline-offset: 2px;
+}
+
+/* Acessibilidade: contraste mínimo de 4,5:1 nos textos de apoio (WCAG 1.4.3) */
+::placeholder {
+  color: #67675f;
+  opacity: 1;
 }
