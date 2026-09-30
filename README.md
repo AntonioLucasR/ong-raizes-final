@@ -128,7 +128,7 @@ Resultados do build:
 
 | Arquivo | Original | Produção | Com gzip |
 |---|---|---|---|
-| CSS (reset + estilos) | 21,9 KB | 16,8 KB | 3,7 KB |
+| CSS (reset + estilos) | 28,2 KB | 21,6 KB | 4,4 KB |
 | JavaScript (10 arquivos) | 41,4 KB | 35,9 KB | 11,2 KB |
 | Imagem principal | 122,3 KB | 32,3 KB | — |
 
