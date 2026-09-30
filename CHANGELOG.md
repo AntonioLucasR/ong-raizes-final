@@ -2,6 +2,11 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 
+## [1.2.1] - 2026-09-30
+
+### Corrigido
+- README: comando de instalação com o endereço real do repositório e pasta `.github/` na estrutura de pastas.
+
 ## [1.2.0] - 2026-09-30
 
 ### Adicionado
