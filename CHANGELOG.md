@@ -2,6 +2,13 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 
+## [1.2.0] - 2026-09-30
+
+### Adicionado
+- Publicação no GitHub Pages, com link público: https://antoniolucasr.github.io/ong-raizes-final/
+- Workflow do GitHub Actions que roda o build em pull requests e publica o site a cada push na `main`.
+- Modelo de pull request e documentação do fluxo com issues, milestones e PRs.
+
 ## [1.1.1] - 2026-09-30
 
 ### Corrigido
