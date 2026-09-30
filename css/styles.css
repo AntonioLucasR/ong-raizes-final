@@ -508,7 +508,7 @@ nav a:hover {
 .campo textarea {
   width: 100%;
   padding: var(--espaco-3) var(--espaco-4);
-  border: 1px solid #d8d3c6;
+  border: 1px solid #7f7f74;
   border-radius: 8px;
   font-size: var(--fonte-base);
   font-family: inherit;
@@ -520,9 +520,9 @@ nav a:hover {
 .campo input:focus,
 .campo select:focus,
 .campo textarea:focus {
-  outline: none;
-  border-color: var(--verde);
-  box-shadow: 0 0 0 3px rgba(47, 122, 83, 0.2);
+  outline:  3px solid var(--verde-escuro);
+  outline-offset: 1px;
+  border-color: var(--verde-escuro);
   background-color: var(--branco);
 }
 
@@ -1126,4 +1126,18 @@ nav a[aria-current="page"] {
 ::placeholder {
   color: #67675f;
   opacity: 1;
+}
+
+/* Acessibilidade: foco visível em links, botões e resumos (WCAG 2.4.7) */
+a:focus-visible,
+summary:focus-visible,
+.menu-hamburguer:focus-visible {
+  outline: 3px solid var(--verde-escuro);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.cabecalho nav a:focus-visible {
+  color: var(--verde);
+  border-bottom-color: var(--verde);
 }
