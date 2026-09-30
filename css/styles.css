@@ -780,10 +780,19 @@ blockquote cite {
     grid-column: span 6;
   }
 
-  .projeto-item,
+  .projeto-item {
+    grid-column: span 12;
+  }
+
+  /* Em telas estreitas, 11 espaços de 40 px passavam da largura da tela */
+  .sobre-colunas {
+    grid-template-columns: 1fr;
+    row-gap: var(--espaco-6);
+  }
+
   .sobre-texto,
   .sobre-imagem {
-    grid-column: span 12;
+    grid-column: 1 / -1;
   }
 
   .sobre-imagem {
