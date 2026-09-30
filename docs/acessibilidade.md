@@ -29,3 +29,21 @@
 - Formulário com `label`, `autocomplete`, `aria-describedby`, `aria-invalid` e erros em texto.
 - Janelas do Bootstrap com `role="dialog"` e rótulo.
 - Movimento reduzido: rolagem suave e transições desligadas com `prefers-reduced-motion`.
+
+## Modos de cor (escuro e alto contraste)
+
+Os dois modos seguem a preferência do sistema operacional, sem JavaScript e sem botão, por meio de media queries no `css/styles.css`:
+
+| Modo | Media query | Como funciona |
+|---|---|---|
+| Escuro | `prefers-color-scheme: dark` | Paleta escura (fundo `#101713`, cartões `#1a241f`, texto `#e8efe9`) aplicada por seletor. Foco em verde-claro. |
+| Alto contraste (claro) | `prefers-contrast: more` | Texto preto (19:1), bordas de 2 px, links sublinhados e foco de 4 px. |
+| Alto contraste (escuro) | `prefers-contrast: more` + escuro | Texto e bordas brancos (18:1). |
+
+Como as variáveis de cor misturam papéis (o branco é fundo de cartão e também texto sobre o degradê), as cores são trocadas por seletor e não pelas variáveis.
+
+### Como testar
+
+- **Escuro:** ative o tema escuro do sistema, ou use o DevTools em *Rendering* e *Emulate CSS prefers-color-scheme*.
+- **Alto contraste:** use o DevTools em *Rendering* e *Emulate CSS prefers-contrast: more*.
+- Rode o axe-core em cada página nos dois modos.

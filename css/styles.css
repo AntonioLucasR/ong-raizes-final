@@ -1150,3 +1150,288 @@ summary:focus-visible,
   color: var(--verde);
   border-bottom-color: var(--verde);
 }
+
+/* ==========================================================
+   Modo escuro automático (segue a preferência do sistema)
+   As variáveis misturam papéis (o branco é fundo de cartão e texto
+   sobre o degradê), por isso as cores são trocadas por seletor.
+   ========================================================== */
+:root {
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --escuro-fundo: #101713;
+    --escuro-superficie: #1a241f;
+    --escuro-superficie-2: #22302a;
+    --escuro-borda: #7d9587;
+    --escuro-texto: #e8efe9;
+    --escuro-texto-suave: #b7c5bc;
+    --escuro-titulo: #a9e3c0;
+    --escuro-acento: #6fcf97;
+    --texto: var(--escuro-texto);
+    --texto-suave: var(--escuro-texto-suave);
+    --sombra: 0 10px 30px rgba(0, 0, 0, 0.45);
+  }
+
+  body {
+    background-color: var(--escuro-fundo);
+    color: var(--escuro-texto);
+  }
+
+  h1, h2, h3,
+  .formulario legend,
+  .pergunta summary,
+  .doacao-tabela th,
+  .contato-dados strong,
+  .modal-title {
+    color: var(--escuro-titulo);
+  }
+
+  .cabecalho {
+    background-color: var(--escuro-superficie);
+    border-bottom-color: #33443b;
+  }
+
+  .marca,
+  .menu-hamburguer {
+    color: var(--escuro-titulo);
+  }
+
+  nav a:hover,
+  nav a[aria-current="page"],
+  .cabecalho nav a:focus-visible {
+    color: var(--escuro-acento);
+    border-bottom-color: var(--escuro-acento);
+  }
+
+  .nav-sublista {
+    background-color: var(--escuro-superficie-2);
+  }
+
+  a:focus-visible,
+  summary:focus-visible,
+  .menu-hamburguer:focus-visible,
+  .menu-chave:focus-visible ~ .menu-hamburguer,
+  .campo input:focus,
+  .campo select:focus,
+  .campo textarea:focus,
+  .link-botao:focus-visible {
+    outline-color: var(--escuro-titulo);
+  }
+
+  .valor-item,
+  .projeto-item,
+  .doacao-metodo,
+  .pergunta,
+  .numero-item,
+  .cadastros-salvos,
+  .formulario fieldset {
+    background-color: var(--escuro-superficie);
+  }
+
+  .projetos {
+    background-color: #16211b;
+  }
+
+  .numero {
+    color: var(--escuro-acento);
+  }
+
+  .doacao-tabela th,
+  .doacao-tabela td {
+    border-bottom-color: #33443b;
+  }
+
+  .projetos-cta .botao,
+  .formulario .botao,
+  .doacao-metodo .botao {
+    background-color: var(--verde);
+    color: var(--branco);
+  }
+
+  .projetos-cta .botao:hover,
+  .formulario .botao:hover,
+  .doacao-metodo .botao:hover {
+    background-color: #38905f;
+  }
+
+  .botao:disabled,
+  .formulario .botao:disabled {
+    background-color: #33443b;
+    color: #b7c5bc;
+  }
+
+  .campo input,
+  .campo select,
+  .campo textarea {
+    background-color: var(--escuro-fundo);
+    border-color: var(--escuro-borda);
+    color: var(--escuro-texto);
+  }
+
+  .campo input:focus,
+  .campo select:focus,
+  .campo textarea:focus {
+    background-color: var(--escuro-fundo);
+    border-color: var(--escuro-titulo);
+  }
+
+  .campo input:disabled,
+  .campo select:disabled,
+  .campo textarea:disabled {
+    background-color: #2a3730;
+    color: #b7c5bc;
+  }
+
+  ::placeholder {
+    color: #9db0a5;
+  }
+
+  .campo input[type="text"]:valid:not(:placeholder-shown),
+  .campo input[type="email"]:valid:not(:placeholder-shown),
+  .campo input[type="tel"]:valid:not(:placeholder-shown),
+  .campo input[aria-invalid="false"]:not(:placeholder-shown),
+  .campo select[aria-invalid="false"],
+  .campo textarea[aria-invalid="false"]:not(:placeholder-shown) {
+    border-color: var(--escuro-acento);
+  }
+
+  .campo input[type="text"]:invalid:not(:placeholder-shown),
+  .campo input[type="email"]:invalid:not(:placeholder-shown),
+  .campo input[type="tel"]:invalid:not(:placeholder-shown),
+  .campo input[aria-invalid="true"],
+  .campo select[aria-invalid="true"],
+  .campo textarea[aria-invalid="true"] {
+    border-color: #ff7b70;
+  }
+
+  .campo-erro {
+    color: #ffa9a2;
+  }
+
+  .alerta--informacao {
+    background-color: #14283b;
+    border-left-color: #6aa8dd;
+    color: #cfe6fa;
+  }
+
+  .alerta--sucesso {
+    background-color: #15291f;
+    border-left-color: var(--escuro-acento);
+    color: #c9efd8;
+  }
+
+  .alerta--perigo {
+    background-color: #33171a;
+    border-left-color: #e0736b;
+    color: #ffd6d2;
+  }
+
+  .cadastros-salvos .botao {
+    color: #ffa9a2;
+    box-shadow: inset 0 0 0 2px #ffa9a2;
+  }
+
+  .cadastros-salvos .botao:hover {
+    background-color: #33171a;
+  }
+
+  .modal-content {
+    background-color: var(--escuro-superficie);
+    color: var(--escuro-texto);
+  }
+
+  .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+  }
+
+  .chave-pix {
+    background-color: var(--escuro-superficie-2);
+    color: var(--escuro-titulo);
+  }
+
+  .aviso-carregando {
+    color: var(--escuro-texto-suave);
+  }
+}
+
+/* ==========================================================
+   Alto contraste (segue a preferência do sistema)
+   ========================================================== */
+@media (prefers-contrast: more) and (prefers-color-scheme: light) {
+  :root {
+    --borda-contraste: #000000;
+    --texto: #000000;
+    --texto-suave: #1a1a17;
+    --verde-escuro: #0f3324;
+    --verde: #14603a;
+    --sombra: none;
+  }
+
+  .destaque-texto {
+    color: #ffffff;
+  }
+
+  ::placeholder {
+    color: #45453f;
+  }
+
+  .campo-erro {
+    color: #7a0f08;
+  }
+}
+
+@media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+  :root {
+    --borda-contraste: #ffffff;
+    --escuro-texto: #ffffff;
+    --escuro-texto-suave: #ffffff;
+    --escuro-titulo: #ffffff;
+    --escuro-acento: #9df0bf;
+    --escuro-borda: #ffffff;
+    --sombra: none;
+  }
+
+  ::placeholder {
+    color: #d8e2dc;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .valor-item,
+  .projeto-item,
+  .doacao-metodo,
+  .pergunta,
+  .numero-item,
+  .cadastros-salvos,
+  .formulario fieldset,
+  .nav-sublista,
+  .modal-content,
+  .alerta {
+    border: 2px solid var(--borda-contraste);
+  }
+
+  .campo input,
+  .campo select,
+  .campo textarea {
+    border: 2px solid var(--borda-contraste);
+  }
+
+  .sobre-texto a,
+  .alerta a,
+  .link-botao {
+    text-decoration: underline;
+  }
+
+  a:focus-visible,
+  summary:focus-visible,
+  .menu-hamburguer:focus-visible,
+  .campo input:focus,
+  .campo select:focus,
+  .campo textarea:focus,
+  .link-botao:focus-visible {
+    outline-width: 4px;
+  }
+}
