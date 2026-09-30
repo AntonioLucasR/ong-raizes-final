@@ -29,7 +29,7 @@ Site institucional de uma ONG fictícia, feito como uma **Single Page Applicatio
 ## Instalação
 
 ```bash
-git clone <caminho-ou-url-do-repositorio> ong-raizes-final
+git clone https://github.com/AntonioLucasR/ong-raizes-final.git
 cd ong-raizes-final
 git checkout develop
 ```
@@ -77,6 +77,9 @@ Assim, uma versão só vai ao ar depois de passar pelo fluxo `feature`, `develop
 
 ```
 ong-raizes-final/
+├── .github/
+│   ├── workflows/deploy.yml   Build em pull requests e deploy no GitHub Pages
+│   └── pull_request_template.md  Modelo de pull request
 ├── html/
 │   ├── index.html         Página única da aplicação (SPA)
 │   └── testes.html        Testes automáticos
