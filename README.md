@@ -118,6 +118,7 @@ O site foi revisado para o nível **AA da WCAG 2.1**:
 - contraste mínimo de 4,5:1 nos textos e de 3:1 nas bordas dos campos;
 - formulário com `label`, `aria-describedby`, `aria-invalid` e mensagens de erro em texto;
 - troca de página anunciada por leitores de tela e `prefers-reduced-motion` respeitado.
+- modo escuro e modo de alto contraste automáticos, que seguem a preferência do sistema (`prefers-color-scheme` e `prefers-contrast`);
 
 Auditoria automática com axe-core: **0 violações** nas três páginas. O passo a passo dos testes está em [docs/acessibilidade.md](docs/acessibilidade.md).
 
