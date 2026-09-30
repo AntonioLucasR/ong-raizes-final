@@ -18,6 +18,7 @@
 | 2.4.1 Ignorar blocos | Sem forma de pular o menu | Link "Pular para o conteúdo principal" |
 | 2.4.7 Foco visível | Links e resumos sem contorno de foco claro | Contorno de 3 px em todos os elementos interativos |
 | 1.4.13 Conteúdo em foco | Submenu não podia ser dispensado | `Esc` fecha o submenu |
+| 1.4.10 Reflow | Bloco "Sobre" com 456 px de largura em telas de 375 px, gerando rolagem horizontal | Coluna única abaixo de 768 px (hotfix da versão 1.0.1) |
 
 ## Requisitos já atendidos na base
 
