@@ -22,6 +22,7 @@ Site institucional de uma ONG fictícia, feito como uma **Single Page Applicatio
 | Navegador atual (Chrome, Edge ou Firefox) | Abrir o site | Sim |
 | Internet | Carregar o Bootstrap pelo CDN | Sim |
 | Git | Controle de versões | Sim, para contribuir |
+| Conta no GitHub | Publicar e usar pull requests, issues e o GitHub Pages | Só para publicar |
 | Windows PowerShell 5.1 ou superior | Rodar `build.ps1` e `deploy.ps1` | Sim, para gerar a versão de produção |
 | ffmpeg | Comprimir a imagem durante o build | Não (sem ele, a imagem é copiada sem compressão) |
 
@@ -61,7 +62,16 @@ powershell -ExecutionPolicy Bypass -File scripts/deploy.ps1
 
 Roda o build e publica `dist/` em `http://localhost:8080/`, com compressão gzip, cache e cabeçalhos de segurança. Use `-Porta 3000` para trocar a porta e `Ctrl+C` para encerrar.
 
-> O deploy é apenas local. O projeto não é publicado em nenhum serviço externo.
+### Publicação (GitHub Pages)
+
+O site publicado está em **https://antoniolucasr.github.io/ong-raizes-final/**.
+
+A publicação é automática, pelo workflow `.github/workflows/deploy.yml`:
+
+- em cada **pull request**, o workflow roda o build e confere os arquivos gerados;
+- a cada **push na `main`**, ele gera o build e publica a pasta `dist/` no GitHub Pages.
+
+Assim, uma versão só vai ao ar depois de passar pelo fluxo `feature`, `develop`, `release` e `main`.
 
 ## Estrutura de pastas
 
