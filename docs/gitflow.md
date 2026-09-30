@@ -75,3 +75,14 @@ Formato: `tipo(escopo opcional): descrição curta no imperativo`
 | `merge` | Integração de uma branch |
 
 Boas práticas: primeira linha com até 72 caracteres, uma linha em branco e um corpo explicando o **porquê** da mudança. Exemplo: `fix(a11y): corrige contraste do texto de destaque`.
+
+## Pull requests, issues e milestones
+
+A partir da versão 1.2.0 o trabalho passa pelo GitHub:
+
+1. **Issue.** Todo trabalho novo começa em uma issue, com contexto e critério de pronto, ligada a um **milestone** (a meta da versão).
+2. **Branch.** Cria-se `feature/nome` a partir da `develop`.
+3. **Pull request.** A branch é enviada e o PR é aberto para a `develop`, usando o modelo em `.github/pull_request_template.md` e citando a issue (`Closes #1`).
+4. **Verificação.** O workflow roda o build no PR. Só se faz o merge com o build verde.
+5. **Merge.** O merge é feito com um commit de junção, mantendo o histórico da funcionalidade.
+6. **Release.** A `release/x.y.z` vai para a `main` por outro PR. A tag e a GitHub Release são criadas e o push na `main` publica o site.
