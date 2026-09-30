@@ -1102,3 +1102,22 @@ nav a[aria-current="page"] {
   margin: var(--espaco-2) 0 0;
   padding-left: var(--espaco-5);
 }
+
+/* Acessibilidade: link para pular ao conteúdo (WCAG 2.4.1) */
+.link-pular {
+  position: absolute;
+  top: -100px;
+  left: var(--espaco-4);
+  z-index: 100;
+  padding: var(--espaco-3) var(--espaco-5);
+  border-radius: 8px;
+  background-color: var(--verde-escuro);
+  color: var(--branco);
+  font-weight: 700;
+}
+
+.link-pular:focus {
+  top: var(--espaco-2);
+  outline: 3px solid var(--branco);
+  outline-offset: 2px;
+}
