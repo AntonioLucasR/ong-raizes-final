@@ -2,6 +2,11 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 
+## [1.1.1] - 2026-09-30
+
+### Corrigido
+- Tamanhos do CSS na tabela de desempenho do README, atualizados após os modos de cor.
+
 ## [1.1.0] - 2026-09-30
 
 ### Adicionado
